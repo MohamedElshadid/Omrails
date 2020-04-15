@@ -1,5 +1,6 @@
 
 @import "bootstrap";
+@import "pages.css";
 
  *= require bootstrap
  *= require_self
