@@ -11,16 +11,22 @@
   <body>
 
     <!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <%= link_to "Elshadid", root_path, class: "navbar-brand" %>
-      <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to "About", about_path, class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to "Contact", "#", class: "nav-link" %></li>
-      </ul>
-  </div>
-</nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <%= link_to "Elshadid", root_path, class: "navbar-brand" %>
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link" %></li>
+              <li class="nav-item"><%= link_to "About", about_path, class: "nav-link" %></li>
+              <li class="nav-item"><%= link_to "Contact", "#", class: "nav-link" %></li>
+          </ul>
+      </div>
+    </nav>
+
+    <!--Flash Messages -->
+
+    <% flash.each do |name, message| %>
+      <%= content_tag(:div,message, class: "alert alert-info #{name}") %>
+    <% end %>
     <!-- Page Content -->
     <%= yield %>
     
